@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Rock, Paper, Scissors</h1>
+        <button class="change-game-btn hidden" id="changeGameBtn" type="button" name="button"></button>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <img src="" alt="">
+        <h3>Human</h3>
+        <p>Wins: 0</p>
+      </section>
+      <section class="home-view">
+        <h2>Choose Your Game!</h2>
+        <div class="game-selection">
+          <!-- Do these articles need to be buttons??? -->
+          <article class="classic-game">
+            <h4>Classic</h4>
+            <p>Rock > Scissors</p>
+            <p>Paper > Rock</p>
+            <p>Scissors > Paper</p>
+          </article>
+          <article class="variation-game">
+            <h4>Difficult</h4>
+            <p>Rock > Scissors & Potted Plant</p>
+            <p>Paper > Rock & Llama</p>
+            <p>Scissors > Paper & Potted Plant</p>
+            <p>Potted Plant > Paper & Llama</p>
+            <p>Llama > Scissors & Rock</p>
+          </article>
+        </div>
+      </section>
+      <section class="choose-your-fighter hidden">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+      </section>
+      <section class="choose-fighter-variation hidden">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+      </section>
+      <section>
+        <img src="" alt="">
+        <h3>Computer</h3>
+        <p>Wins: 0</p>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="Player.js"></script>
+    <script src="Game.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
