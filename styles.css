@@ -1,16 +1,68 @@
+* {
+  font-family: 'Libre Franklin', sans-serif;
+  margin: 0;
+}
+
+/* Header */
+
+header {
+  background-color: #2d2f30;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 110px;
+  justify-content: center;
+  align-items: center;
+}
+/* nav {
+  align-items: center;
+  display: flex;
+  font-size: 30px;
+  color: white;
+  width: 70%;
+  margin-left: auto;
+} */
+
+h1 {
+  margin-left: 100px;
+}
+
+
+
+
+
+
 
 
 
 main {
-  /* background-color: black; */
+  background-color: #025161;
+  display: flex;
 }
+
+
+ /* Buttons */
+
+ .change-game-btn {
+   align-items: center;
+   background-color: #878787;
+   border-radius: 5px;
+   color: white;
+   display: flex;
+   height: 35px;
+   justify-content: center;
+   margin-left: 70px;
+   outline: none;
+   width: 150px;
+ }
 
 img {
   width: 15%;
 }
 
-
-
+footer {
+  background-color: #3e4042;
+}
 
 
 
