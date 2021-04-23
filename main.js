@@ -1,7 +1,5 @@
 var currentGame;
 
-// Utilize event bubbling
-// event listener on div
 var classicFighters = document.querySelector('#classicFighters');
 var difficultFighters = document.querySelector('#difficultFighters');
 var selectGame = document.querySelector('#selectGame');
@@ -17,14 +15,8 @@ middleSection.addEventListener('click', function(event) {
 });
 
 
-
 function changeGameMode(event) {
-
-  // Invoke function that hides this gameSelection view
-  // Brings up choose your fighter view
-
   if (event.target.closest('button').id === 'classic') {
-    // still need to query these elements...but don't focus on the DOM yet
     toggleHidden(selectGame, classicFighters);
   } else {
     toggleHidden(selectGame, difficultFighters);
@@ -42,14 +34,15 @@ function changeGameMode(event) {
     var player1 = new Player('human', tokenChoice1)
     // Another function invoked
     // invoke takeTurn method...do I need to declare player2 here? or in takeTurn?
-    selectFighter2(player1)
+    selectFighter2(player1, gameChoice)
   }
 
-  function selectFighter2(player1) {
+  function selectFighter2(player1, gameChoice) {
     var tokens = ['rock', 'paper', 'scissors', 'plant', 'llama'];
     var tokenChoice2 = tokens[getRandomIndex(tokens)];
     var player2 = new Player('computer', tokenChoice2);
     currentGame = new Game(player1, player2);
+    currentGame.evaluateWinner(gameChoice);
   }
 
   function getRandomIndex(array) {
