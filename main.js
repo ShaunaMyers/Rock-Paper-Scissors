@@ -4,10 +4,16 @@ var currentGame;
 // event listener on div
 
 var gameSelection = document.querySelector('#gameSelection');
+var middleSection = document.querySelector('#middleSection');
 
-gameSelection.addEventListener('click', function(event){
+gameSelection.addEventListener('click', function(event) {
   chooseGameMode(event);
 });
+
+middleSection.addEventListener('click', function(event) {
+  chooseFighter(event);
+});
+
 
 
 function chooseGameMode(event) {
@@ -41,11 +47,20 @@ function chooseGameMode(event) {
       // If gameChoice equals classic
         // Hide gameSelection view
         // Unhide classic fighters view
+        toggleHidden(gameSelection, classicFighters);
       // If gamechoice equals dificult
         // Hide gameSelection view
         // Unhide difficult fighters view
+        toggleHidden(gameSelection, difficultFighters);
+  }
+
+  function chooseFighter(event) {
+    var tokenChoice = event.target.closest('button').id;
+    console.log(tokenChoice);
   }
 
   function toggleHidden() {
-
+    for (var i = 0; i < arguments.length; i++) {
+      arguments[i].classList.toggle('hidden');
+    }
   }
