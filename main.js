@@ -2,73 +2,58 @@ var currentGame;
 
 // Utilize event bubbling
 // event listener on div
-
+var classicFighters = document.querySelector('#classicFighters');
+var difficultFighters = document.querySelector('#difficultFighters');
+var selectGame = document.querySelector('#selectGame');
 var gameSelection = document.querySelector('#gameSelection');
-var middleSection = document.querySelector('#middleSection');
+var middleSection = document.querySelector('.middle-section');
 
 gameSelection.addEventListener('click', function(event) {
-  chooseGameMode(event);
+  changeGameMode(event);
 });
 
 middleSection.addEventListener('click', function(event) {
-  chooseFighter(event);
+  selectFighter1(event);
 });
 
 
 
-function chooseGameMode(event) {
-  // What do I want to do here?
-  // Necessary to store this data in Game class
-  // ****This affects how the game is played ***
-  // var gameChoice = event.target.closest('button').id;
-  // return gameChoice;
-  // place this in Game class??? in method that updates game type later?
-  currentGame = new Game(gameChoice);
-  console.log(currentGame);
-  // I could save the gameChoice and pass it into the next function
-  gameModeSelection(gameChoice);
-  // Invoke function that hides this gameSelection views
-    // Brings up choose your fighter view
-    // Player1 then selects Fighter
-      // These need to be buttons
-      // Instantiate new Player1
-      // Save value of token selected in player1 instance
-      // Save name as Human in player1 instance
+function changeGameMode(event) {
 
+  // Invoke function that hides this gameSelection view
+  // Brings up choose your fighter view
 
-  // Invoke function that selects the type of game, which is necessary for fighter selection
-    // Fighter selection has two different views
-      // Invoke different function for this?
-      // Necessary for which screen appears
-      // Classic and difficult
-      // But this is all on the DOM
+  if (event.target.closest('button').id === 'classic') {
+    // still need to query these elements...but don't focus on the DOM yet
+    toggleHidden(selectGame, classicFighters);
+  } else {
+    toggleHidden(selectGame, difficultFighters);
   }
+}
+  // Player1 then selects Fighter
+  // Instantiate new Player1
+  // Save value of token selected in player1 instance
+  // Save name as Human in player1 instance
 
-  function gameModeSelection(gameChoice) {
-    // Create toggleHidden function to send in arguments to hide views
-    // This is better than a lot of bulky classList add and remove repetitive code
-      // If gameChoice equals classic
-        // Hide gameSelection view
-        // Unhide classic fighters view
-        // May want to build in return true or false
-          // or pass the game choice to that function s
-            // Maybe then I can instantiate the Game class instead of above
-          // This is so this function can be called from choose fighter
-          // it
-        toggleHidden(gameSelection, difficultFighters);
-      // If gamechoice equals dificult
-        // Hide gameSelection view
-        // Unhide difficult fighters view
-        toggleHidden(gameSelection, difficultFighters);
-  }
 
-  function chooseFighter(event) {
-    var tokenChoice = event.target.closest('button').id;
+  function selectFighter1(event) {
+    var tokenChoice1 = event.target.closest('button').id;
     var gameChoice = event.target.closest('div').id;
-    var player1 = new Player('human', tokenChoice)
+    var player1 = new Player('human', tokenChoice1)
+    // Another function invoked
     // invoke takeTurn method...do I need to declare player2 here? or in takeTurn?
-    console.log(tokenChoice);
-    console.log(gameChoice);
+    selectFighter2(player1)
+  }
+
+  function selectFighter2(player1) {
+    var tokens = ['rock', 'paper', 'scissors', 'plant', 'llama'];
+    var tokenChoice2 = tokens[getRandomIndex(tokens)];
+    var player2 = new Player('computer', tokenChoice2);
+    currentGame = new Game(player1, player2);
+  }
+
+  function getRandomIndex(array) {
+    return Math.floor(Math.random() * array.length);
   }
 
   function toggleHidden() {

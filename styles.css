@@ -45,7 +45,7 @@ img {
 }
 
 /* switched this from choose-your-game */
-.choose-your-game {
+.select-game {
   align-items: center;
   background-color: white;
   display: flex;
