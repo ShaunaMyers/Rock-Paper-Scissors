@@ -20,8 +20,11 @@ function chooseGameMode(event) {
   // What do I want to do here?
   // Necessary to store this data in Game class
   // ****This affects how the game is played ***
-  var gameChoice = event.target.closest('button').id;
+  // var gameChoice = event.target.closest('button').id;
+  // return gameChoice;
+  // place this in Game class??? in method that updates game type later?
   currentGame = new Game(gameChoice);
+  console.log(currentGame);
   // I could save the gameChoice and pass it into the next function
   gameModeSelection(gameChoice);
   // Invoke function that hides this gameSelection views
@@ -47,7 +50,12 @@ function chooseGameMode(event) {
       // If gameChoice equals classic
         // Hide gameSelection view
         // Unhide classic fighters view
-        toggleHidden(gameSelection, classicFighters);
+        // May want to build in return true or false
+          // or pass the game choice to that function s
+            // Maybe then I can instantiate the Game class instead of above
+          // This is so this function can be called from choose fighter
+          // it
+        toggleHidden(gameSelection, difficultFighters);
       // If gamechoice equals dificult
         // Hide gameSelection view
         // Unhide difficult fighters view
@@ -56,7 +64,11 @@ function chooseGameMode(event) {
 
   function chooseFighter(event) {
     var tokenChoice = event.target.closest('button').id;
+    var gameChoice = event.target.closest('div').id;
+    var player1 = new Player('human', tokenChoice)
+    // invoke takeTurn method...do I need to declare player2 here? or in takeTurn?
     console.log(tokenChoice);
+    console.log(gameChoice);
   }
 
   function toggleHidden() {
