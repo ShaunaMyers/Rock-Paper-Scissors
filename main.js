@@ -4,7 +4,6 @@ var currentGame;
 // event listener on div
 
 var gameSelection = document.querySelector('#gameSelection');
-var classicContents = document.getElementById('#classic');
 
 gameSelection.addEventListener('click', function(event){
   chooseGameMode(event);
@@ -41,7 +40,7 @@ function chooseGameMode(event) {
     // This is better than a lot of bulky classList add and remove repetitive code
       // If gameChoice equals classic
         // Hide gameSelection view
-        // Unhide classic fighters view 
+        // Unhide classic fighters view
       // If gamechoice equals dificult
         // Hide gameSelection view
         // Unhide difficult fighters view

@@ -14,20 +14,20 @@
     </header>
     <main>
       <section class="human-score score-box">
-        <img src="assets/masculine-user.png" alt="Human stick-figure image">
+        <img src="assets/human.png" alt="Human outline image">
         <h3>Human</h3>
         <p>Wins: 0</p>
       </section>
-      <section class="choose-your-game">
+      <section class="choose-your-game hidden">
         <h2>Choose Your Game!</h2>
         <div class="game-selection" id="gameSelection">
-          <button class="classic-game" id="classic">
+          <button class="rules" id="classic">
             <h4>Classic</h4>
             <p>Rock > Scissors</p>
             <p>Paper > Rock</p>
             <p>Scissors > Paper</p>
           </button>
-          <button class="variation-game" id="difficult">
+          <button class="rules" id="difficult">
             <h4>Difficult</h4>
             <p>Rock > Scissors & Potted Plant</p>
             <p>Paper > Rock & Llama</p>
@@ -37,30 +37,28 @@
           </button>
         </div>
       </section>
-      <section class="middle-section hidden">
+      <section class="middle-section">
         <h4>Choose Your Fighter!</h4>
         <div class="game-images">
-          <!-- can make an image the background through CSS -->
-          <button type="button" name="button"></button>
-          <img class="rock-img" src="assets/stone.png" alt="Rock image">
-          <img class="papers-img" src="assets/script.png" alt="Paper image">
-          <img class="scissors-img" src="assets/scissors.png" alt="Scissors image">
+          <button class="rock-img" id="rock" type="button" name="button"></button>
+          <button class="paper-img" id="paper" type="button" name="button"></button>
+          <button class="scissors-img" id="scissors" type="button" name="button"></button>
         </div>
       </section>
       <section class="middle-section hidden">
         <h4>Choose Your Fighter!</h4>
         <div class="game-images">
-          <img class="rock-img" src="assets/stone.png" alt="Rock image">
-          <img class="papers-img" src="assets/script.png" alt="Paper image">
-          <img class="scissors-img" src="assets/scissors.png" alt="Scissors image">
+          <button class="rock-img" id="rock" type="button" name="button"></button>
+          <button class="paper-img" id="paper" type="button" name="button"></button>
+          <button class="scissors-img" id="scissors" type="button" name="button"></button>
         </div>
         <div class="game-images game-images-variation">
-          <img class="potted-plant-img" src="assets/plant-pot.png" alt="Potted plant image">
-          <img class="llama-img" src="assets/llama.png" alt="Llama image">
+          <button class="plant-img" id="plant" type="button" name="button"></button>
+          <button class="llama-img" id="llama" type="button" name="button"></button>
         </div>
       </section>
       <section class="computer-score score-box">
-        <img src="assets/laptop.png" alt="Laptop image">
+        <img src="assets/computer.png" alt="Laptop image">
         <h3>Computer</h3>
         <p>Wins: 0</p>
       </section>
