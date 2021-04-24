@@ -5,6 +5,7 @@ var difficultFighters = document.querySelector('#difficultFighters');
 var selectGame = document.querySelector('#selectGame');
 var gameSelection = document.querySelector('#gameSelection');
 var middleSection = document.querySelector('.middle-section');
+var middleSection2 = document.querySelector('.middle2-section');
 
 gameSelection.addEventListener('click', function(event){
   changeGameView(event);
@@ -14,6 +15,10 @@ gameSelection.addEventListener('click', function(event){
 middleSection.addEventListener('click', function(event) {
   selectFighterView(event);
 });
+
+middleSection2.addEventListener('click', function(event) {
+  selectFighterView(event);
+})
 
 function changeGameView(event) {
   if (event.target.closest('button').id === 'classic') {
@@ -32,7 +37,9 @@ function startNewGame() {
 }
 
 
-  function selectFighterView(event) {
+function selectFighterView(event) {
+  console.log('hi select fighter has been invoked');
+  console.log('diff ID', event.target.closest('div').id);
     // play with adding dynamic value to changeHiddenViews function
       // Was hoping to pass in the id name of the selection
       // Which is the same as my queryselected var above
@@ -41,12 +48,12 @@ function startNewGame() {
     // var battleModeView = event.target.closest('section').id;
     // changeHiddenViews(battleModeView);
     changeGameView(event);
-    currentGame.saveGameDetails1(event);
-  }
+    currentGame.saveGameDetails(event);
+}
 
 
-  function changeHiddenViews() {
-    for (var i = 0; i < arguments.length; i++) {
+function changeHiddenViews() {
+  for (var i = 0; i < arguments.length; i++) {
       arguments[i].classList.toggle('hidden');
-    }
   }
+}

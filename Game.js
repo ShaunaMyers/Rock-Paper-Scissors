@@ -7,11 +7,12 @@ class Game {
   }
 
 // player instances here
-  saveGameDetails1(event) {
+  saveGameDetails(event) {
     var selectedFighter = event.target.closest('button').id;
+    console.log("Difficult Fighter", selectedFighter);
     var gameChoice = event.target.closest('div').id;
-    this.mode = gameChoice;
     console.log('MODE', gameChoice);
+    this.mode = gameChoice;
     this.player1.changePlayerDetails(selectedFighter);
   }
 
