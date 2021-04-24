@@ -1,33 +1,53 @@
 class Player {
-  constructor(name, token,fighter) {
+  constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.fighter = fighter;
+    this.fighter = '';
     this.wins = 0;
   }
+
+
   saveWinsToStorage() {
     // localStorage
     // stringify here
   }
+
+
   retrieveWinsFromStorage() {
     // parse here
   }
-  takeTurn() {
-      // timeout??????
-    var fighters = ['rock', 'paper', 'scissors', 'plant', 'llama'];
-    var fighterChoice2 = fighters[this.getRandomIndex(fighters)];
-    currentGame.saveGameDetails2(fighterChoice2);
-    // My mentor told me this should update token
-      // But I already have this information
-    // Or would this kick off player2's turn
-    // timeout??????
+
+
+  changePlayerDetails(selectedFighter) {
+    this.fighter = selectedFighter;
+    // this.takeTurn();
+    currentGame.changePlayer2Details()
   }
+
+
+  takeTurn() {
+      // timeout?????? or is this for the board reset???
+    var selectedFighter2;
+    if (currentGame.mode === 'difficult') {
+      var fighters = ['rock', 'paper', 'scissors', 'plant', 'llama'];
+      selectedFighter2 = fighters[this.getRandomIndex(fighters)];
+    } else {
+      var fighters = ['rock', 'paper', 'scissors']
+      selectedFighter2 = fighters[this.getRandomIndex(fighters)];
+    }
+    this.fighter = selectedFighter2;
+    currentGame.evaluateWinner(currentGame.player1.fighter, this.fighter);
+  }
+
+
   getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
   }
 
+
   updateWins() {
     this.wins++;
-    currentGame.resetBoard();
+    console.log('2', currentGame.player1.wins, currentGame.player2.wins);
+    // currentGame.resetBoard();
   }
 };
