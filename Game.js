@@ -6,64 +6,64 @@ class Game {
   }
 
 // player instances here
+  saveGameDetails1(event) {
+    var fighterChoice1 = event.target.closest('button').id;
+    // Do I need these lines here? Because I could just pass in fighter and reuse this function for player2
+    var gameChoice = event.target.closest('div').id;
+    this.mode = gameChoice;
+    console.log('1', gameChoice);
+    var player1 = new Player('human', '👩🏻‍🌾', fighterChoice1)
+    this.player1 = player1;
+    player1.takeTurn()
+  }
 
-  evaluateWinner(gameChoice) {
-    var token1 = this.player1.token;
-    var token2 = this.player2.token;
-    if (gameChoice === 'classic') {
-      this.mode = gameChoice;
-      this.classicWinner(token1, token2)
+  saveGameDetails2(fighterChoice2) {
+    var player2 = new Player('computer', '🖥', fighterChoice2)
+    this.player2 = player2;
+    this.evaluateWinner();
+  }
+
+// Game choice has been rerouted...alter this below...think more about this
+// What calls evaluateWinner?
+  evaluateWinner() {
+    var fighter1 = this.player1.fighter;
+    var fighter2 = this.player2.fighter;
+    if (this.mode === 'classic') {
+      this.classicWinner(fighter1, fighter2)
     }  else {
-      this.mode = gameChoice;
-      this.difficultWinner(token1, token2);
+      this.difficultWinner(fighter1, fighter2);
     }
   }
 
-  classicWinner(token1, token2) {
-    // logic for what beats what
-    // Would a switch statement be the best thing?
-    // invoke player1.updateWins or player2.updateWins
-
-    // How do I get what is returned from this?
-    // Can I save all these ternaries in a variable?
-    // ***ORRR I think this is returning anything that is on the other side of the "?'***
-      // If the condition evaluates to true
-      // can I just make an if statment in updateWins that says if (classicWinner === player1)
-      // else if (classicWinner === player2)
-      // I can then have another code block for "Draw"
-      // This will eventually invoke a function that would insert innerText that states it's a draw
-
+  classicWinner(fighter1, fighter2) {
       // if else
-    if (token1 === 'rock' && token2 === 'scissors' || token1 === 'paper' && token2 === 'rock') { 
-      return player1;
+    if (fighter1 === fighter2) {
+      // This will probably invoke a function that changes innertext
+      return "It's a draw!"
+    } else if ((fighter1 === 'rock' && fighter2 === 'scissors') || (fighter1 === 'paper' && fighter2 === 'rock') || (fighter1 === 'scissors' && fighter2 === "paper")) {
+      player1.updateWins();
+    } else {
+      player2.updateWins();
     }
-    (token1 === 'paper' && token2 === 'rock') ? player1 :
-    (token1 === 'scissors' && token2 === "paper") ? player1 :
-
-    (token2 === 'rock' && token2 === 'scissors') ? player2 :
-    (token2 === 'paper' && token2 === 'rock') ? player2 :
-    (token2 === 'scissors' && token2 === "paper") ? player2 : 'Draw' // Maybe invoke difficultWinner here?
-    // Could I simply call one function from evaluateWinner
-    // THEN in the else statement on line 39, invoke difficultWinner
-      // DifficultWinner would then include the other conditions
-      // Follows the DRY principle...?
-
-
   }
 
-  difficultWinner(token1, token2) {
 
-    // This logic is probably too much for ternary...think we're supposed to keep them to one line
-
+  difficultWinner(fighter1, fighter2) {
     // Can you do this???
-    if (token1 === 'rock' && (token2 === 'scissors' || token2 === 'potted plant')
+    // Might have to change this all back to stating: e.g. fighter2 === 'scissors' || fighter2 === 'rock'
+    // Trying to shorten this now but may not work...other version in note app!
+    if (fighter1 === fighter2) {
+      return `It's a draw!` // invoke function that changes innertext instead
+    } else if ((fighter1 === 'rock' && fighter2 === ('scissors' || 'rock')) || (fighter1 === 'paper' && fighter2 === ('rock' || 'llama')) || (fighter1 === 'scissors' && fighter2 === ('paper' || 'plant')) || (fighter1 === 'plant' && fighter2 === ('paper' || llama')) || (fighter1 === 'llama' && fighter2 === ('scissors' || 'rock')) {
+      player1.updateWins();
+    } else {
+      player2.updateWins();
+    }
 
-
-    // logic for what beats what in the difficult version
-    // invoke player1.updateWins or player2.updateWins
-  }
 
   resetBoard() {
-
+    // This function changes view back to either classic or difficult
+      // So...I need logic to evaluate what this.mode is
+    
   }
 }
