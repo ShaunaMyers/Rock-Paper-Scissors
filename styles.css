@@ -145,13 +145,19 @@ give them a background image in CSS */
   background-image: url(assets/scissors.png);
 }
 
-.plant-img {
+#plant {
   background-image: url(assets/plant.png);
+  width: 115px;
+  margin-right: 1.5%
 }
 
-.llama-img {
+#llama {
   background-image: url(assets/llama.png);
+  margin-left: 1.5%;
+  width: 115px;
 }
+
+
 
 footer {
   background-color: #1f2427;
