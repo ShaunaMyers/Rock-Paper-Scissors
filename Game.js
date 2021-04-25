@@ -5,14 +5,17 @@ class Game {
     this.mode = '';
   }
 
+
   saveGameDetails(event) {
     this.mode = event.target.closest('div').id;
     this.player1.changePlayer1Details(event.target.closest('button').id);
   }
 
+
   changePlayer2Details() {
     this.player2.takeTurn();
   }
+
 
   evaluateWinner(fighter1, fighter2) {
     var winner;
@@ -29,12 +32,12 @@ class Game {
     this.player2.declareWinner(winner);
   }
 
-// Not working yet
 
   resetBoard() {
-    setTimeOut(function() {
-      endBattleModeView();
-    }, 1000);
+    var gameChoice = this.mode;
+    setTimeout(function() {
+      endBattleModeView(gameChoice);
+    }, 2000);
   }
 
 

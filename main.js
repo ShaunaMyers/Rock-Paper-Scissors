@@ -26,6 +26,7 @@ middleSection2.addEventListener('click', function(event) {
   selectFighterView(event);
 })
 
+
 function changeGameView(event) {
   if (event.target.closest('button').id === 'classic') {
     changeHiddenViews(selectGame, classicFighters);
@@ -37,6 +38,7 @@ function changeGameView(event) {
     changeHiddenViews(difficultFighters, battleMode);
   }
 }
+
 
 function startNewGame() {
   currentGame = new Game();
@@ -73,7 +75,10 @@ function displayfighterChoices(winner, fighter1, fighter2) {
       <img src="assets/${fighter2}.png">
     </div>
   `;
+  currentGame.resetBoard();
 }
+
+
 
 function changeWinnerBanner(winner) {
   if (winner === "draw") {
@@ -84,9 +89,15 @@ function changeWinnerBanner(winner) {
 }
 
 
-// function endBattleModeView() {
-//   changeHiddenViews(difficultFighters, selectGame);
-// }
+function endBattleModeView(gameChoice) {
+  var currentFighterView;
+  if (gameChoice === "classic") {
+    currentFighterView = classicFighters;
+  } else {
+    currentFighterView = difficultFighters;
+  }
+  changeHiddenViews(battleMode, currentFighterView);
+}
 
 
 function changeHiddenViews() {
