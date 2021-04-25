@@ -1,11 +1,14 @@
 var currentGame;
 
+// I'm querying the same container... .middle-section and classicFighters...?
 var classicFighters = document.querySelector('#classicFighters');
 var difficultFighters = document.querySelector('#difficultFighters');
 var selectGame = document.querySelector('#selectGame');
 var gameSelection = document.querySelector('#gameSelection');
 var middleSection = document.querySelector('.middle-section');
 var middleSection2 = document.querySelector('.middle2-section');
+var battleMode = document.querySelector('#battleMode');
+
 
 gameSelection.addEventListener('click', function(event){
   changeGameView(event);
@@ -25,11 +28,11 @@ function changeGameView(event) {
     changeHiddenViews(selectGame, classicFighters);
   } else if (event.target.closest('button').id === 'difficult') {
     changeHiddenViews(selectGame, difficultFighters);
+  } else if (event.target.closest('section').id === 'classicFighters') {
+    changeHiddenViews(classicFighters, battleMode);
+  } else {
+    changeHiddenViews(difficultFighters, battleMode);
   }
-  // else if (event.target.closest('section').id === 'classicFighters') {
-  //   changeHiddenViews(classicFighters);
-  // } else {
-  //   changeHiddenViews(difficultFighters);
 }
 
 function startNewGame() {
@@ -52,8 +55,14 @@ function selectFighterView(event) {
 }
 
 
-function showfighterChoices(player1, player2) {
-  middleSection.innerHTML = '';
+function showfighterChoices(winner, fighter1, fighter2) {
+  battleMode.innerHTML = '';
+  battleMode.innerHTML = `
+    <div class="game-images">
+      <img src="assets/${fighter1}.png">
+      <img src="assets/${fighter2}.png">
+    </div>
+  `
 }
 
 

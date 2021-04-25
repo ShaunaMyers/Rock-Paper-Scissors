@@ -19,8 +19,8 @@ class Player {
 
 
   changePlayerDetails(selectedFighter) {
+    console.log(selectedFighter);
     this.fighter = selectedFighter;
-    // this.takeTurn();
     currentGame.changePlayer2Details()
   }
 
@@ -35,7 +35,6 @@ class Player {
       selectedFighter2 = fighters[this.getRandomIndex(fighters)];
     }
     this.fighter = selectedFighter2;
-    showfighterChoices(currentGame.player1.fighter, this.fighter);
     currentGame.evaluateWinner(currentGame.player1.fighter, this.fighter);
   }
 
@@ -47,7 +46,10 @@ class Player {
 
   updateWins() {
     this.wins++;
-    console.log('2', currentGame.player1.wins, currentGame.player2.wins);
-    // currentGame.resetBoard();
   }
+
+  declareWinner(winner) {
+    showfighterChoices(winner, currentGame.player1.fighter, this.fighter);
+}
+
 };
