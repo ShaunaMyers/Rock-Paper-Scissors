@@ -1,13 +1,16 @@
 var currentGame;
 
 // I'm querying the same container... .middle-section and classicFighters...?
+var battleMode = document.querySelector('#battleMode');
 var classicFighters = document.querySelector('#classicFighters');
+var computerScore = document.querySelector('#computerScore');
 var difficultFighters = document.querySelector('#difficultFighters');
-var selectGame = document.querySelector('#selectGame');
 var gameSelection = document.querySelector('#gameSelection');
+var humanScore = document.querySelector('#humanScore');
 var middleSection = document.querySelector('.middle-section');
 var middleSection2 = document.querySelector('.middle2-section');
-var battleMode = document.querySelector('#battleMode');
+var selectGame = document.querySelector('#selectGame');
+var winnerBanner = document.querySelector('#winnerBanner');
 
 
 gameSelection.addEventListener('click', function(event){
@@ -55,14 +58,29 @@ function selectFighterView(event) {
 }
 
 
-function showfighterChoices(winner, fighter1, fighter2) {
-  battleMode.innerHTML = '';
-  battleMode.innerHTML = `
+function displayUpdatedWins(player1Wins, player2Wins) {
+  humanScore.innerText = `Wins: ${player1Wins}`;
+  computerScore.innerText = `Wins: ${player2Wins}`;
+}
+
+
+function displayfighterChoices(winner, fighter1, fighter2) {
+  // battleMode.innerHTML = '';
+  changeWinnerBanner(winner);
+  battleMode.innerHTML += `
     <div class="game-images">
       <img src="assets/${fighter1}.png">
       <img src="assets/${fighter2}.png">
     </div>
-  `
+  `;
+}
+
+function changeWinnerBanner(winner) {
+  if (winner === "draw") {
+    winnerBanner.innerText = `It's a Draw!`;
+  } else {
+    winnerBanner.innerText = `The ${winner} Wins!!!`;
+  }
 }
 
 

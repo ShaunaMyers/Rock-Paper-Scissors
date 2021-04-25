@@ -35,7 +35,6 @@ class Player {
     }
     this.fighter = selectedFighter2;
     currentGame.evaluateWinner(currentGame.player1.fighter, this.fighter);
-    console.log('5', currentGame.player1.fighter, this.fighter);
   }
 
 
@@ -45,14 +44,12 @@ class Player {
 
 
   updateWins() {
-    console.log(currentGame.player2.wins);
-    console.log(currentGame.player1.wins);
     this.wins++;
+    displayUpdatedWins(currentGame.player1.wins, currentGame.player2.wins);
   }
 
   declareWinner(winner) {
-    showfighterChoices(winner, currentGame.player1.fighter, this.fighter);
-    console.log('8', currentGame.player1.fighter, this.fighter);
+    displayfighterChoices(winner, currentGame.player1.fighter, this.fighter);
 }
 
 };
