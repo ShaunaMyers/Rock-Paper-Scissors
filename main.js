@@ -46,8 +46,6 @@ function startNewGame() {
 
 
 function selectFighterView(event) {
-  console.log('hi select fighter has been invoked');
-  console.log('diff ID', event.target.closest('div').id);
     // play with adding dynamic value to changeHiddenViews function
       // Was hoping to pass in the id name of the selection
       // Which is the same as my queryselected var above
@@ -67,7 +65,7 @@ function displayUpdatedWins(player1Wins, player2Wins) {
 
 
 function displayfighterChoices(winner, fighter1, fighter2) {
-  // battleMode.innerHTML = '';
+  battleMode.innerHTML = '';
   changeWinnerBanner(winner);
   battleMode.innerHTML += `
     <div class="game-images">
@@ -81,11 +79,20 @@ function displayfighterChoices(winner, fighter1, fighter2) {
 
 
 function changeWinnerBanner(winner) {
-  if (winner === "draw") {
-    winnerBanner.innerText = `It's a Draw!`;
+  if (winner === 'Draw') {
+    battleMode.innerHTML = `
+    <h4>It's a ${winner}!</h4>
+    `;
   } else {
-    winnerBanner.innerText = `The ${winner} Wins!!!`;
+    battleMode.innerHTML = `
+      <h4>${winner} Wins!!!</h4>
+    `;
   }
+  // if (winner === "draw") {
+  //   winnerBanner.innerText = `It's a Draw!`;
+  // } else {
+  //   winnerBanner.innerText = `The ${winner} Wins!!!`;
+  // }
 }
 
 

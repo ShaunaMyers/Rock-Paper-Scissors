@@ -20,7 +20,7 @@ class Game {
   evaluateWinner(fighter1, fighter2) {
     var winner;
     if (fighter1 === fighter2) {
-      winner = 'draw';
+      winner = 'Draw';
       // this.resetBoard()???
     } else if ((fighter1 === 'rock' && (fighter2 === 'scissors' || fighter2 === 'paper')) || (fighter1 === 'paper' && (fighter2 === 'rock' || fighter2 === 'llama')) || (fighter1 === 'scissors' && (fighter2 === 'paper' || fighter2 === 'plant')) || (fighter1 === 'plant' && (fighter2 === 'paper' || fighter2 === 'llama')) || (fighter1 === 'llama' && (fighter2 === 'scissors' || fighter2 === 'rock'))) {
       this.player1.updateWins();
@@ -37,7 +37,7 @@ class Game {
     var gameChoice = this.mode;
     setTimeout(function() {
       endBattleModeView(gameChoice);
-    }, 2000);
+    }, 3000);
   }
 
 
