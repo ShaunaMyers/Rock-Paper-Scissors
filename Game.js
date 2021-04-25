@@ -9,7 +9,6 @@ class Game {
   saveGameDetails(event) {
     if (event.target.closest('section').id === 'selectGame') {
       this.mode = event.target.closest('button').id;
-      console.log('111', this.mode);
     } else if (event.target.closest('section').id === 'classicFighters' ||
   event.target.closest('section').id === 'difficultFighters') {
     this.player1.changePlayer1Details(event.target.closest('button').id);
@@ -40,6 +39,7 @@ class Game {
 
   resetBoard() {
     var gameChoice = this.mode;
+    changeGameBtn.setAttribute('disabled', '')
     setTimeout(function() {
       endBattleModeView(gameChoice);
     }, 2000);

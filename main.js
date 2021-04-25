@@ -109,15 +109,15 @@ function endBattleModeView(gameChoice) {
     currentFighterView = difficultFighters;
   }
   changeHiddenViews(battleMode, currentFighterView);
+  changeGameBtn.removeAttribute('disabled', '')
 }
 
 
 function displayGameSelectionView() {
-  console.log('2', currentGame.mode);
   if (currentGame.mode === 'classic') {
     changeHiddenViews(classicFighters, selectGame, changeGameBtn);
   } else {
-    console.log('Whaaaaaat');
+    changeHiddenViews(difficultFighters, selectGame, changeGameBtn);
   }
 }
 
