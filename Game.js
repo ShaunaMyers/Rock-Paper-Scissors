@@ -5,22 +5,19 @@ class Game {
     this.mode = '';
   }
 
-// player instances here
   saveGameDetails(event) {
-    // var selectedFighter = event.target.closest('button').id;
     this.mode = event.target.closest('div').id;
     console.log(this.mode);
-    this.player1.changePlayerDetails(event.target.closest('button').id);
-    // this.mode = gameChoice;
-    // this.player1.changePlayerDetails(selectedFighter);
+    this.player1.changePlayer1Details(event.target.closest('button').id);
   }
 
-  changePlayer2Details(selectedFighter2) {
+  changePlayer2Details() {
     this.player2.takeTurn();
     // this.evaluateWinner();
   }
 
   evaluateWinner(fighter1, fighter2) {
+    console.log('6', fighter1, fighter2);
     var winner;
     if (fighter1 === fighter2) {
       winner = 'draw';
@@ -32,7 +29,8 @@ class Game {
       this.player2.updateWins();
       winner = 'Computer';
     }
-    this.player1.declareWinner(winner);
+    this.player2.declareWinner(winner);
+    console.log('7', winner);
   }
 
 

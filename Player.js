@@ -18,10 +18,9 @@ class Player {
   }
 
 
-  changePlayerDetails(selectedFighter) {
-    console.log(selectedFighter);
+  changePlayer1Details(selectedFighter) {
     this.fighter = selectedFighter;
-    currentGame.changePlayer2Details()
+    currentGame.changePlayer2Details();
   }
 
 
@@ -36,6 +35,7 @@ class Player {
     }
     this.fighter = selectedFighter2;
     currentGame.evaluateWinner(currentGame.player1.fighter, this.fighter);
+    console.log('5', currentGame.player1.fighter, this.fighter);
   }
 
 
@@ -45,11 +45,14 @@ class Player {
 
 
   updateWins() {
+    console.log(currentGame.player2.wins);
+    console.log(currentGame.player1.wins);
     this.wins++;
   }
 
   declareWinner(winner) {
     showfighterChoices(winner, currentGame.player1.fighter, this.fighter);
+    console.log('8', currentGame.player1.fighter, this.fighter);
 }
 
 };
