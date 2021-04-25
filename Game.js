@@ -1,14 +1,19 @@
 class Game {
   constructor() {
-    this.player1 = new Player('human', '👩🏻‍🌾');
-    this.player2 = new Player('computer', '🖥');
+    this.player1 = new Player('human', 'assets/human.png');
+    this.player2 = new Player('computer', 'assets/computer.png');
     this.mode = '';
   }
 
 
   saveGameDetails(event) {
-    this.mode = event.target.closest('div').id;
+    if (event.target.closest('section').id === 'selectGame') {
+      this.mode = event.target.closest('button').id;
+      console.log('111', this.mode);
+    } else if (event.target.closest('section').id === 'classicFighters' ||
+  event.target.closest('section').id === 'difficultFighters') {
     this.player1.changePlayer1Details(event.target.closest('button').id);
+    }
   }
 
 
@@ -37,7 +42,7 @@ class Game {
     var gameChoice = this.mode;
     setTimeout(function() {
       endBattleModeView(gameChoice);
-    }, 3000);
+    }, 2000);
   }
 
 

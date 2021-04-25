@@ -20,6 +20,7 @@ class Player {
 
   changePlayer1Details(selectedFighter) {
     this.fighter = selectedFighter;
+    console.log('222', this.fighter);
     currentGame.changePlayer2Details();
   }
 

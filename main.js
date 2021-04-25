@@ -2,6 +2,7 @@ var currentGame;
 
 // I'm querying the same container... .middle-section and classicFighters...?
 var battleMode = document.querySelector('#battleMode');
+var changeGameBtn = document.querySelector('#changeGameBtn');
 var classicFighters = document.querySelector('#classicFighters');
 var computerScore = document.querySelector('#computerScore');
 var difficultFighters = document.querySelector('#difficultFighters');
@@ -15,7 +16,7 @@ var winnerBanner = document.querySelector('#winnerBanner');
 
 gameSelection.addEventListener('click', function(event){
   changeGameView(event);
-  startNewGame();
+  startNewGame(event);
 });
 
 middleSection.addEventListener('click', function(event) {
@@ -25,6 +26,8 @@ middleSection.addEventListener('click', function(event) {
 middleSection2.addEventListener('click', function(event) {
   selectFighterView(event);
 })
+
+changeGameBtn.addEventListener('click', displayGameSelectionView);
 
 
 function changeGameView(event) {
@@ -40,8 +43,15 @@ function changeGameView(event) {
 }
 
 
-function startNewGame() {
+function startNewGame(event) {
   currentGame = new Game();
+  currentGame.saveGameDetails(event);
+  displayChangeGameBtn();
+}
+
+
+function displayChangeGameBtn() {
+  changeHiddenViews(changeGameBtn);
 }
 
 
@@ -88,11 +98,6 @@ function changeWinnerBanner(winner) {
       <h4>${winner} Wins!!!</h4>
     `;
   }
-  // if (winner === "draw") {
-  //   winnerBanner.innerText = `It's a Draw!`;
-  // } else {
-  //   winnerBanner.innerText = `The ${winner} Wins!!!`;
-  // }
 }
 
 
@@ -104,6 +109,16 @@ function endBattleModeView(gameChoice) {
     currentFighterView = difficultFighters;
   }
   changeHiddenViews(battleMode, currentFighterView);
+}
+
+
+function displayGameSelectionView() {
+  console.log('2', currentGame.mode);
+  if (currentGame.mode === 'classic') {
+    changeHiddenViews(classicFighters, selectGame, changeGameBtn);
+  } else {
+    console.log('Whaaaaaat');
+  }
 }
 
 
