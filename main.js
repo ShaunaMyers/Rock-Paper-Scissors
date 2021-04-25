@@ -25,11 +25,11 @@ function changeGameView(event) {
     changeHiddenViews(selectGame, classicFighters);
   } else if (event.target.closest('button').id === 'difficult') {
     changeHiddenViews(selectGame, difficultFighters);
-  } else if (event.target.closest('section').id === 'classicFighters') {
-    changeHiddenViews(classicFighters)
-  } else {
-    changeHiddenViews(difficultFighters);
   }
+  // else if (event.target.closest('section').id === 'classicFighters') {
+  //   changeHiddenViews(classicFighters);
+  // } else {
+  //   changeHiddenViews(difficultFighters);
 }
 
 function startNewGame() {
@@ -50,6 +50,16 @@ function selectFighterView(event) {
     changeGameView(event);
     currentGame.saveGameDetails(event);
 }
+
+
+function showfighterChoices(player1, player2) {
+  middleSection.innerHTML = '';
+}
+
+
+// function endBattleModeView() {
+//   changeHiddenViews(difficultFighters, selectGame);
+// }
 
 
 function changeHiddenViews() {

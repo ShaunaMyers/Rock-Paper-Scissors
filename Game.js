@@ -3,7 +3,6 @@ class Game {
     this.player1 = new Player('human', '👩🏻‍🌾');
     this.player2 = new Player('computer', '🖥');
     this.mode = '';
-
   }
 
 // player instances here
@@ -11,7 +10,6 @@ class Game {
     var selectedFighter = event.target.closest('button').id;
     console.log("Difficult Fighter", selectedFighter);
     var gameChoice = event.target.closest('div').id;
-    console.log('MODE', gameChoice);
     this.mode = gameChoice;
     this.player1.changePlayerDetails(selectedFighter);
   }
@@ -24,7 +22,6 @@ class Game {
 // Game choice has been rerouted...alter this below...think more about this
 // What calls evaluateWinner?
   evaluateWinner(fighter1, fighter2) {
-    console.log('HERE', fighter1, fighter2);
     if (this.mode === 'classic') {
       this.classicWinner(fighter1, fighter2)
     }  else {
@@ -37,6 +34,7 @@ class Game {
       // This will probably invoke a function that changes innertext
       console.log(`It's a draw!`);
       return "It's a draw!"
+      // this.resetBoard();
     } else if ((fighter1 === 'rock' && fighter2 === 'scissors') || (fighter1 === 'paper' && fighter2 === 'rock') || (fighter1 === 'scissors' && fighter2 === "paper")) {
       this.player1.updateWins();
     } else {
@@ -50,26 +48,29 @@ class Game {
     // Might have to change this all back to stating: e.g. fighter2 === 'scissors' || fighter2 === 'rock'
     // Trying to shorten this now but may not work...other version in note app!
     if (fighter1 === fighter2) {
-      return `It's a draw!` // invoke function that changes innertext instead
+      return `It's a draw!`
+      // invoke function that changes innertext instead
+      // this.resetBoard()???
     } else if ((fighter1 === 'rock' && (fighter2 === 'scissors' || fighter2 === 'paper')) || (fighter1 === 'paper' && (fighter2 === 'rock' || fighter2 === 'llama')) || (fighter1 === 'scissors' && (fighter2 === 'paper' || fighter2 === 'plant')) || (fighter1 === 'plant' && (fighter2 === 'paper' || fighter2 === 'llama')) || (fighter1 === 'llama' && (fighter2 === 'scissors' || fighter2 === 'rock'))) {
       this.player1.updateWins();
     } else {
       this.player2.updateWins();
     }
 
-  //
-  // resetBoard() {
-  //   // This function changes view back to either classic or difficult
-  //     // So...I need logic to evaluate what this.mode is
-  //   // I need to hide classic and diff fighter views
-  //     // I need display the player1 and player2 on the DOM
-  //
-  //   if (this.mode === 'classic') {
-  //     toggleHidden(classicFighters);
-  //   } else {
-  //     toggleHidden(difficultFighters);
-  //   }
-  //
-  // }
   }
+
+  // Not working yet
+  resetBoard() {
+    setTimeOut(function() {
+      endBattleModeView();
+    }, 1000);
+  }
+  // Move this to main.js
+    // if (this.mode === 'classic') {
+    //   toggleHidden(classicFighters);
+    // } else {
+    //   toggleHidden(difficultFighters);
+    // }
+    //
+
 }

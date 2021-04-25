@@ -26,7 +26,6 @@ class Player {
 
 
   takeTurn() {
-      // timeout?????? or is this for the board reset???
     var selectedFighter2;
     if (currentGame.mode === 'difficult') {
       var fighters = ['rock', 'paper', 'scissors', 'plant', 'llama'];
@@ -36,6 +35,7 @@ class Player {
       selectedFighter2 = fighters[this.getRandomIndex(fighters)];
     }
     this.fighter = selectedFighter2;
+    showfighterChoices(currentGame.player1.fighter, this.fighter);
     currentGame.evaluateWinner(currentGame.player1.fighter, this.fighter);
   }
 
