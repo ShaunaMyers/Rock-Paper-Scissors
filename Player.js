@@ -1,26 +1,30 @@
 class Player {
   constructor(name, token) {
+    this.id = Date.now();
     this.name = name;
     this.token = token;
     this.fighter = '';
-    this.wins = 0;
+    this.wins = 0;       // localStorage.getItem(this.id) || 0;   
   }
 
 
   saveWinsToStorage() {
-    // localStorage
-    // stringify here
+    var savedWins = JSON.stringify(this.wins);
+    localStorage.setItem(this.id, savedWins);
+    this.retrieveWinsFromStorage();
   }
 
 
   retrieveWinsFromStorage() {
-    // parse here
+    var playerName = this.name;
+    var retrievedWins = localStorage.getItem(this.id);
+    var playerWins = JSON.parse(retrievedWins);
+    displayUpdatedWins(playerName, playerWins);
   }
 
 
   changePlayer1Details(selectedFighter) {
     this.fighter = selectedFighter;
-    console.log('222', this.fighter);
     currentGame.changePlayer2Details();
   }
 
@@ -46,7 +50,7 @@ class Player {
 
   updateWins() {
     this.wins++;
-    displayUpdatedWins(currentGame.player1.wins, currentGame.player2.wins);
+    this.saveWinsToStorage();
   }
 
   declareWinner(winner) {

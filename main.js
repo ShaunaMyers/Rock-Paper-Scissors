@@ -19,6 +19,7 @@ gameSelection.addEventListener('click', function(event){
   startNewGame(event);
 });
 
+// Refactor for only one event listener and event bubbling
 middleSection.addEventListener('click', function(event) {
   selectFighterView(event);
 });
@@ -54,23 +55,26 @@ function displayChangeGameBtn() {
   changeHiddenViews(changeGameBtn);
 }
 
+// How do I use the event.target.id dynamically???
+  // I want to use it as the first part of classicFighters
+  // and difficultFighters views
+    // e.g. changeHiddenViews(`${event.target.closest('div').id}Fighters`)
+    // When I've tried different variations of this I get error in console
+      // Seems to be unable to recognize the element that I'm trying to target
+      // Variable with querySelector (above) has the exact name as the string that should be returned from line 61: classicFighters or difficultFighters
 
 function selectFighterView(event) {
-    // play with adding dynamic value to changeHiddenViews function
-      // Was hoping to pass in the id name of the selection
-      // Which is the same as my queryselected var above
-      // Doesn't work...cannot read property of null
-    // console.log(event.target.closest('section').id);
-    // var battleModeView = event.target.closest('section').id;
-    // changeHiddenViews(battleModeView);
     changeGameView(event);
     currentGame.saveGameDetails(event);
 }
 
 
-function displayUpdatedWins(player1Wins, player2Wins) {
-  humanScore.innerText = `Wins: ${player1Wins}`;
-  computerScore.innerText = `Wins: ${player2Wins}`;
+function displayUpdatedWins(playerName, playerWins) {
+  if (playerName === 'human') {
+    humanScore.innerText = `Wins: ${playerWins}`;
+  } else {
+    computerScore.innerText = `Wins: ${playerWins}`;
+  }
 }
 
 
