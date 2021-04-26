@@ -4,7 +4,7 @@ class Player {
     this.name = name;
     this.token = token;
     this.fighter = '';
-    this.wins = 0;       // localStorage.getItem(this.id) || 0;   
+    this.wins = localStorage.getItem(this.id) || 0;
   }
 
 
@@ -17,8 +17,7 @@ class Player {
 
   retrieveWinsFromStorage() {
     var playerName = this.name;
-    var retrievedWins = localStorage.getItem(this.id);
-    var playerWins = JSON.parse(retrievedWins);
+    var playerWins = JSON.parse(this.wins);
     displayUpdatedWins(playerName, playerWins);
   }
 

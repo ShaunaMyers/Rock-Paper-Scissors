@@ -13,6 +13,11 @@ var middleSection2 = document.querySelector('.middle2-section');
 var selectGame = document.querySelector('#selectGame');
 var winnerBanner = document.querySelector('#winnerBanner');
 
+window.onload = function() {
+  currentGame = new Game();
+  displaySavedWins();
+}
+
 
 gameSelection.addEventListener('click', function(event){
   changeGameView(event);
@@ -45,7 +50,6 @@ function changeGameView(event) {
 
 
 function startNewGame(event) {
-  currentGame = new Game();
   currentGame.saveGameDetails(event);
   displayChangeGameBtn();
 }
@@ -68,6 +72,10 @@ function selectFighterView(event) {
     currentGame.saveGameDetails(event);
 }
 
+function displaySavedWins() {
+  currentGame.player1.retrieveWinsFromStorage();
+  currentGame.player2.retrieveWinsFromStorage();
+}
 
 function displayUpdatedWins(playerName, playerWins) {
   if (playerName === 'human') {
