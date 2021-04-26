@@ -1,6 +1,6 @@
 class Player {
-  constructor(name, token) {
-    this.id = Date.now();
+  constructor(name, token, id) {
+    this.id = id;
     this.name = name;
     this.token = token;
     this.fighter = '';

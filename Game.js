@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player1 = new Player('human', 'assets/human.png');
-    this.player2 = new Player('computer', 'assets/computer.png');
+    this.player1 = new Player('human', 'assets/human.png', 0);
+    this.player2 = new Player('computer', 'assets/computer.png', 1);
     this.mode = '';
   }
 
