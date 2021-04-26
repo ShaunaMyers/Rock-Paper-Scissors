@@ -1,27 +1,30 @@
 class Player {
   constructor(name, token) {
+    this.id = Date.now();
     this.name = name;
     this.token = token;
     this.fighter = '';
-    this.wins = 0;
+    this.wins = localStorage.getItem(this.id) || 0;
   }
 
 
   saveWinsToStorage() {
-    // localStorage
-    // stringify here
+    var savedWins = JSON.stringify(this.wins);
+    localStorage.setItem(this.id, savedWins);
+    this.retrieveWinsFromStorage();
   }
 
 
   retrieveWinsFromStorage() {
-    // parse here
+    var playerName = this.name;
+    var playerWins = JSON.parse(this.wins);
+    displayUpdatedWins(playerName, playerWins);
   }
 
 
-  changePlayerDetails(selectedFighter) {
+  changePlayer1Details(selectedFighter) {
     this.fighter = selectedFighter;
-    // this.takeTurn();
-    currentGame.changePlayer2Details()
+    currentGame.changePlayer2Details();
   }
 
 
@@ -35,7 +38,6 @@ class Player {
       selectedFighter2 = fighters[this.getRandomIndex(fighters)];
     }
     this.fighter = selectedFighter2;
-    showfighterChoices(currentGame.player1.fighter, this.fighter);
     currentGame.evaluateWinner(currentGame.player1.fighter, this.fighter);
   }
 
@@ -47,7 +49,11 @@ class Player {
 
   updateWins() {
     this.wins++;
-    console.log('2', currentGame.player1.wins, currentGame.player2.wins);
-    // currentGame.resetBoard();
+    this.saveWinsToStorage();
   }
+
+  declareWinner(winner) {
+    displayfighterChoices(winner, currentGame.player1.fighter, this.fighter);
+}
+
 };

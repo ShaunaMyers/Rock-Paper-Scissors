@@ -16,7 +16,7 @@
       <section class="human-score score-box">
         <img src="assets/human.png" alt="Human outline image">
         <h3>Human</h3>
-        <p>Wins: 0</p>
+        <p id="humanScore">Wins: 0</p>
       </section>
       <section class="select-game" id="selectGame">
         <h2>Choose Your Game!</h2>
@@ -45,6 +45,7 @@
           <button class="scissors-img" id="scissors" type="button" name="button"></button>
         </div>
       </section>
+      <!-- Maybe remove this middle-section again...CSS sytles -->
       <section class="middle2-section middle-section hidden" id="difficultFighters">
         <h4>Choose Your Fighter!</h4>
         <div class="game-images" id="difficult">
@@ -55,12 +56,16 @@
         <div class="game-images game-images-variation" id="difficult">
           <button class="plant-img" id="plant" type="button" name="button"></button>
           <button class="llama-img" id="llama" type="button" name="button"></button>
+          <img src="" alt="">
         </div>
+      </section>
+      <section class="middle-section hidden" id="battleMode">
+        <h4 id="winnerBanner"></h4>
       </section>
       <section class="computer-score score-box">
         <img src="assets/computer.png" alt="Laptop image">
         <h3>Computer</h3>
-        <p>Wins: 0</p>
+        <p id="computerScore">Wins: 0</p>
       </section>
     </main>
     <footer></footer>
