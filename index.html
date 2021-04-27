@@ -13,8 +13,8 @@
         <button class="change-game-btn hidden" id="changeGameBtn" type="button" name="button">CHANGE GAME</button>
     </header>
     <main>
-      <section class="human-score score-box">
-        <img src="assets/human.png" alt="Human outline image">
+      <section class="human-score-box">
+        <img class="score-box-img" src="assets/human.png" alt="Human outline image">
         <h3>Human</h3>
         <p id="humanScore">Wins: 0</p>
       </section>
@@ -62,10 +62,17 @@
       <section class="middle-section hidden" id="battleMode">
         <h4 id="winnerBanner"></h4>
       </section>
-      <section class="computer-score score-box">
-        <img src="assets/computer.png" alt="Laptop image">
-        <h3>Computer</h3>
-        <p id="computerScore">Wins: 0</p>
+      <!-- Remove classes that aren't being used...computer-score... -->
+      <!-- class="computer-score score-box" -->
+      <section class="computer-score-box">
+        <div class="computer-details">
+          <img class="score-box-img" src="assets/computer.png" alt="Laptop image">
+          <h3>Computer</h3>
+          <p id="computerScore">Wins: 0</p>
+        </div>
+        <div class="reset-score">
+          <button class="reset-score-btn" type="button" name="button">RESET SCORE</button>
+        </div>
       </section>
     </main>
     <footer></footer>
