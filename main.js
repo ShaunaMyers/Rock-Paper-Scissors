@@ -36,7 +36,7 @@ middleSection2.addEventListener('click', function(event) {
 
 changeGameBtn.addEventListener('click', displayGameSelectionView);
 
-resetScoreBtn.addEventListener('click', resetGameScore);
+resetScoreBtn.addEventListener('click', resetPlayersScore);
 
 
 function changeGameView(event) {
@@ -129,11 +129,11 @@ function displayGameSelectionView() {
 
 function displayResetScoreBtn() {
   if (currentGame.player1.wins || currentGame.player2.wins) {
-    changeHiddenViews(resetScoreBtn);
+    resetScoreBtn.classList.remove('hidden');
   }
 }
 
-function resetGameScore() {
+function resetPlayersScore() {
   currentGame.resetGameScore();
   changeHiddenViews(resetScoreBtn);
 }

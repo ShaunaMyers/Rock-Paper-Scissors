@@ -38,6 +38,14 @@ button {
   width: 150px;
 }
 
+.rules:hover, .reset-score-btn:hover, .change-game-btn:hover {
+  background-color: pink;
+}
+
+.game-images > button:hover {
+  background-color: gray;
+}
+
 
 /* Main */
 
