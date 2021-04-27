@@ -16,6 +16,7 @@ var winnerBanner = document.querySelector('#winnerBanner');
 window.onload = function() {
   currentGame = new Game();
   displaySavedWins();
+  displayResetScoreBtn();
 }
 
 
@@ -49,12 +50,6 @@ function changeGameView(event) {
 
 function startNewGame(event) {
   currentGame.saveGameDetails(event);
-  displayChangeGameBtn();
-}
-
-
-function displayChangeGameBtn() {
-  changeHiddenViews(changeGameBtn);
 }
 
 
@@ -125,11 +120,18 @@ function displayGameSelectionView() {
   }
 }
 
-
+// Change game button disappeared now!
 function resetPlayersScore() {
   currentGame.resetGameScore();
+  changeHiddenViews(resetScoreBtn);
 }
 
+
+function displayResetScoreBtn() {
+  if (currentGame.player1.wins || currentGame.player2.wins) {
+    changeHiddenViews(resetScoreBtn);
+  }
+}
 
 
 function changeHiddenViews() {

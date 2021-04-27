@@ -54,6 +54,7 @@ class Player {
   updateWins() {
     this.wins++;
     this.saveWinsToStorage();
+    displayResetScoreBtn();
   }
 
 
