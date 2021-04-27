@@ -97,11 +97,11 @@ function displayfighterChoices(winner, fighter1, fighter2) {
 function changeWinnerBanner(winner) {
   if (winner === 'Draw') {
     battleMode.innerHTML = `
-    <h4>It's a ${winner}!</h4>
+    <h2>It's a ${winner}!</h2>
     `;
   } else {
     battleMode.innerHTML = `
-      <h4>${winner} Wins!!!</h4>
+      <h2>${winner} Wins!!!</h2>
     `;
   }
 }
