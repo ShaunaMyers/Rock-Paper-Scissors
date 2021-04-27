@@ -27,6 +27,7 @@ class Player {
     this.saveWinsToStorage();
   }
 
+
   changePlayer1Details(selectedFighter) {
     this.fighter = selectedFighter;
     currentGame.changePlayer2Details();
@@ -54,12 +55,11 @@ class Player {
   updateWins() {
     this.wins++;
     this.saveWinsToStorage();
-    // displayResetScoreBtn();
   }
 
 
   declareWinner(winner) {
-    displayfighterChoices(winner, currentGame.player1.fighter, this.fighter);
-}
+    displayfighterChoices(winner, currentGame.player1, this);
+  }
 
 };

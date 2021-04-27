@@ -170,10 +170,6 @@ h4, h3 {
   padding: 5%;
 }
 
-.classic-header {
-  margin-bottom: 5%;
-}
-
 .game-images > button {
   background-color: Transparent;
   background-size: cover;
@@ -208,9 +204,19 @@ h4, h3 {
   width: 115px;
 }
 
+.winner-banner {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.winner-banner > img {
+  width: 8%;
+}
+
 footer {
   background-color: #1f2427;
-  height: 70px;
+  height: 90px;
   margin-top: 0;
 }
 

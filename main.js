@@ -11,7 +11,7 @@ var middleSection = document.querySelector('.middle-section');
 var middleSection2 = document.querySelector('.middle2-section');
 var resetScoreBtn = document.querySelector('#resetScoreBtn');
 var selectGame = document.querySelector('#selectGame');
-var winnerBanner = document.querySelector('#winnerBanner');
+
 
 window.onload = function() {
   currentGame = new Game();
@@ -81,28 +81,49 @@ function displayUpdatedWins(playerName, playerWins) {
 }
 
 
-function displayfighterChoices(winner, fighter1, fighter2) {
+function displayfighterChoices(winner, player1, player2) {
   battleMode.innerHTML = '';
-  changeWinnerBanner(winner);
+  changeWinnerBanner(winner, player1, player2);
   battleMode.innerHTML += `
     <div class="game-images">
-      <img src="assets/${fighter1}.png">
-      <img src="assets/${fighter2}.png">
+      <img src="assets/${player1.fighter}.png">
+      <img src="assets/${player2.fighter}.png">
     </div>
   `;
   currentGame.resetBoard();
 }
 
 
-function changeWinnerBanner(winner) {
+function changeWinnerBanner(winner, player1, player2) {
   if (winner === 'Draw') {
     battleMode.innerHTML = `
+    <div class="winner-banner">
+      <img class="score-box-img" src=${player1.token} alt="Human image">
+      <img class="score-box-img" src=${player2.token} alt="Laptop image">
+    </div>
     <h2>It's a ${winner}!</h2>
     `;
   } else {
-    battleMode.innerHTML = `
+    displayPlayerTokens(winner, player1, player2);
+    battleMode.innerHTML += `
       <h2>${winner} Wins!!!</h2>
     `;
+  }
+}
+
+function displayPlayerTokens(winner, player1, player2) {
+  if (winner === 'Human') {
+    battleMode.innerHTML = `
+    <div class="winner-banner">
+      <img class="score-box-img" src=${player1.token} alt="Human image">
+    </div>
+    `
+  } else {
+    battleMode.innerHTML = `
+    <div class="winner-banner">
+      <img class="score-box-img" src=${player2.token} alt="Laptop image">
+    </div>
+    `
   }
 }
 
