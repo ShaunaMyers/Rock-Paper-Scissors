@@ -19,7 +19,7 @@
 [Play Rock, Paper, Scissors here on the live site! (link to be added when GH pages are deployed)](https://github.com/ShaunaMyers/Rock-Paper-Scissors/)
 
 ### Main View
-![image](https://user-images.githubusercontent.com/74690897/116312484-7f636080-a77a-11eb-84c2-7c343958f9cd.png)  
+![image](https://user-images.githubusercontent.com/74690897/116312790-e97c0580-a77a-11eb-86da-f203be547179.png)  
 When opening the app, you will be taken to the main view. On this page, you will see two buttons in the center of the page. You can click the "Classic" button or the "Difficult" button. These buttons also display the rules, explaining which fighter will when in battle. Once you click one of these options, you will be taken to the next screen to select your fighter.
 ### Select Fighter View
 ![image (1)](https://user-images.githubusercontent.com/74690897/116308831-fea26580-a775-11eb-9be0-f4720841fddf.png)   
