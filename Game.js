@@ -47,4 +47,10 @@ class Game {
       endBattleModeView(gameChoice);
     }, 2000);
   }
+
+  resetGameScore() {
+    this.player1.resetWinsInLocalStorage();
+    this.player2.resetWinsInLocalStorage();
+  }
+
 }

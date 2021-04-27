@@ -9,6 +9,7 @@ var gameSelection = document.querySelector('#gameSelection');
 var humanScore = document.querySelector('#humanScore');
 var middleSection = document.querySelector('.middle-section');
 var middleSection2 = document.querySelector('.middle2-section');
+var resetScoreBtn = document.querySelector('#resetScoreBtn');
 var selectGame = document.querySelector('#selectGame');
 var winnerBanner = document.querySelector('#winnerBanner');
 
@@ -33,6 +34,8 @@ middleSection2.addEventListener('click', function(event) {
 })
 
 changeGameBtn.addEventListener('click', displayGameSelectionView);
+
+resetScoreBtn.addEventListener('click', resetPlayersScore);
 
 
 function changeGameView(event) {
@@ -121,6 +124,12 @@ function displayGameSelectionView() {
     changeHiddenViews(difficultFighters, selectGame, changeGameBtn);
   }
 }
+
+
+function resetPlayersScore() {
+  currentGame.resetGameScore();
+}
+
 
 
 function changeHiddenViews() {
