@@ -51,6 +51,7 @@ class Player {
     this.saveWinsToStorage();
   }
 
+
   declareWinner(winner) {
     displayfighterChoices(winner, currentGame.player1.fighter, this.fighter);
 }

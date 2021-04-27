@@ -1,6 +1,5 @@
 var currentGame;
 
-// I'm querying the same container... .middle-section and classicFighters...?
 var battleMode = document.querySelector('#battleMode');
 var changeGameBtn = document.querySelector('#changeGameBtn');
 var classicFighters = document.querySelector('#classicFighters');
@@ -55,15 +54,18 @@ function displayChangeGameBtn() {
   changeHiddenViews(changeGameBtn);
 }
 
+
 function selectFighterView(event) {
   changeHiddenViews(eval(`${event.target.closest('div').id}Fighters`), battleMode);
   currentGame.saveGameDetails(event);
 }
 
+
 function displaySavedWins() {
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
 }
+
 
 function displayUpdatedWins(playerName, playerWins) {
   if (playerName === 'human') {
@@ -85,7 +87,6 @@ function displayfighterChoices(winner, fighter1, fighter2) {
   `;
   currentGame.resetBoard();
 }
-
 
 
 function changeWinnerBanner(winner) {
