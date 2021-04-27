@@ -8,6 +8,7 @@
 
 - <a href="#how-to-use-app">How to Use the App</a>
 - <a href="#technologies-used">Technologies Used</a>
+- <a href="#goals">Goals</a>
 - <a href="#contributors">Contributors</a>
 - <a href="#future-additions">Future Additions</a>
 - <a href="#special-thanks">Special Thanks</a>
@@ -31,7 +32,7 @@ The winner is announced above the fighters and an image of either a computer or 
 
 You may choose to change the game by pressing the "Change Game" button, at the top right. This will take you back to the main page, where you can select from the "Classic" and "Difficult" variations.
 
-You may choose to reset the score (after the game has commenced and scores have been tallied)...highly recommended for those games where the cheating computer is winning way too often! 
+You may choose to reset the score (after the game has commenced and scores have been tallied) by pressing the "Reset Score" button...this is highly recommended for those games where the cheating computer is winning way too often! 
 
 
 
@@ -39,6 +40,12 @@ You may choose to reset the score (after the game has commenced and scores have 
 - JavaScript
 - CSS
 - HTML
+
+## <a id="goals">Goals</a>
+- Solidify and demonstrate your understanding of DRY JavaScript, localStorage/persistance of data, and event delegation for handling of similar event listeners
+- Understand the difference between the data model and how the data is displayed on the DOM
+- Iterate through/filter DOM elements using for loops
+- Use your problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical challenge
 
 ## <a id="contributors">Contributors</a>
 - [Shauna Myers](https://github.com/ShaunaMyers)
