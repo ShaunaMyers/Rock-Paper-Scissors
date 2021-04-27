@@ -36,7 +36,7 @@ middleSection2.addEventListener('click', function(event) {
 
 changeGameBtn.addEventListener('click', displayGameSelectionView);
 
-resetScoreBtn.addEventListener('click', resetPlayersScore);
+resetScoreBtn.addEventListener('click', resetGameScore);
 
 
 function changeGameView(event) {
@@ -50,12 +50,19 @@ function changeGameView(event) {
 
 function startNewGame(event) {
   currentGame.saveGameDetails(event);
+  displayChangeGameBtn();
+}
+
+
+function displayChangeGameBtn() {
+  changeHiddenViews(changeGameBtn);
 }
 
 
 function selectFighterView(event) {
   changeHiddenViews(eval(`${event.target.closest('div').id}Fighters`), battleMode);
   currentGame.saveGameDetails(event);
+  displayResetScoreBtn();
 }
 
 
@@ -120,17 +127,15 @@ function displayGameSelectionView() {
   }
 }
 
-// Change game button disappeared now!
-function resetPlayersScore() {
-  currentGame.resetGameScore();
-  changeHiddenViews(resetScoreBtn);
-}
-
-
 function displayResetScoreBtn() {
   if (currentGame.player1.wins || currentGame.player2.wins) {
     changeHiddenViews(resetScoreBtn);
   }
+}
+
+function resetGameScore() {
+  currentGame.resetGameScore();
+  changeHiddenViews(resetScoreBtn);
 }
 
 
