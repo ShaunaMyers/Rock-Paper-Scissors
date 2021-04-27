@@ -2,7 +2,7 @@
 
 ## Overview
 
-  An app that provides a new twist on your classic version of Rock, Paper, Scissors!
+  An app that provides a new twist on the classic game of Rock, Paper, Scissors!
   
 ## Table of Contents
 
@@ -19,18 +19,20 @@
 
 ### Main View
 ![image](https://user-images.githubusercontent.com/74690897/116308466-8471e100-a775-11eb-83ae-da7df5a58218.png)  
-When opening the app, you will be taken to the home view. On this page, you will see a randomly generated cover with a random title and tagline. You can click the "Show New Random Cover" button to generate a new random cover. If a particular cover strikes your fancy, click the "Save Cover" button to save it in the Saved Covers section. You can click the "View Saved Covers" button to see all of your currently saved covers.  
-*Note: The "Save Cover" button will not save the cover to your machine. We recommend taking a screenshot to save your favorite covers to your computer!*
+When opening the app, you will be taken to the main view. On this page, you will see two buttons in the center of the page. You can click the "Classic" button or the "Difficult" button. These buttons also display the rules, explaining which fighter will when in battle. Once you click one of these options, you will be taken to the next screen to select your fighter.
 ### Select Fighter View
 ![image (1)](https://user-images.githubusercontent.com/74690897/116308831-fea26580-a775-11eb-9be0-f4720841fddf.png)   
-This page displays all of the covers that you have saved. If you would like to delete a cover, double-click on it. (Be careful, though, this is **permanent**!)  
-Feeling creative? Click on the "Make Your Own Cover" button!
+This page displays a selection of fighters that you will be able to choose from, by clicking on the fighter itself. If you chose the "Classic" option on the previous screen then you can choose from three of your lovable fighters: rock, paper, or scissors. If you chose the "Difficult" option on the last screen then you will have five options: rock, paper, scissors, potted plant, and llama.
 ### Battle Mode View
 ![image (2)](https://user-images.githubusercontent.com/74690897/116308881-0feb7200-a776-11eb-84ce-80e794dadf55.png)    
-This form will allow you to create a custom cover to your specifications.  
+Once you have selected a fighter by clicking on it, you will be taken to the battle mode view. Here you will see the fighter you chose appear on the left side of the center screen. The fighter the computer chose will appear on the right side of the center screen.
 
-After all forms are filled, click the "Make My Book" button to view your new creation.  
-This will take you back to the Home View, where you can save your new cover to the Saved Covers section, or generate new random covers.
+The winner is announced above the fighters and an image of either a computer or a human will be displayed above the winner banner. The scores on either side of the screen will collect the wins and will immediatley reflect the new winnner's score in the battle mode view. In the case of a draw, you will see the matching fighters displayed, both the images of computer and human, and scores will not increase.
+
+You may choose to change the game by pressing the "Change Game" button, at the top right. This will take you back to the main page, where you can select from the "Classic" and "Difficult" variations.
+
+You may choose to reset the score (after the game has commenced and scores have been tallied)...highly recommended for those games where the cheating computer is winning way too often! 
+
 
 
 ## <a id="technologies-used">Technologies Used</a>
