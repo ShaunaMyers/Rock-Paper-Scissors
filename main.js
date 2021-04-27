@@ -1,6 +1,5 @@
 var currentGame;
 
-// I'm querying the same container... .middle-section and classicFighters...?
 var battleMode = document.querySelector('#battleMode');
 var changeGameBtn = document.querySelector('#changeGameBtn');
 var classicFighters = document.querySelector('#classicFighters');
@@ -39,12 +38,8 @@ changeGameBtn.addEventListener('click', displayGameSelectionView);
 function changeGameView(event) {
   if (event.target.closest('button').id === 'classic') {
     changeHiddenViews(selectGame, classicFighters);
-  } else if (event.target.closest('button').id === 'difficult') {
-    changeHiddenViews(selectGame, difficultFighters);
-  } else if (event.target.closest('section').id === 'classicFighters') {
-    changeHiddenViews(classicFighters, battleMode);
   } else {
-    changeHiddenViews(difficultFighters, battleMode);
+    changeHiddenViews(selectGame, difficultFighters);
   }
 }
 
@@ -59,23 +54,18 @@ function displayChangeGameBtn() {
   changeHiddenViews(changeGameBtn);
 }
 
-// How do I use the event.target.id dynamically???
-  // I want to use it as the first part of classicFighters
-  // and difficultFighters views
-    // e.g. changeHiddenViews(`${event.target.closest('div').id}Fighters`)
-    // When I've tried different variations of this I get error in console
-      // Seems to be unable to recognize the element that I'm trying to target
-      // Variable with querySelector (above) has the exact name as the string that should be returned from line 61: classicFighters or difficultFighters
 
 function selectFighterView(event) {
-    changeGameView(event);
-    currentGame.saveGameDetails(event);
+  changeHiddenViews(eval(`${event.target.closest('div').id}Fighters`), battleMode);
+  currentGame.saveGameDetails(event);
 }
+
 
 function displaySavedWins() {
   currentGame.player1.retrieveWinsFromStorage();
   currentGame.player2.retrieveWinsFromStorage();
 }
+
 
 function displayUpdatedWins(playerName, playerWins) {
   if (playerName === 'human') {
@@ -97,7 +87,6 @@ function displayfighterChoices(winner, fighter1, fighter2) {
   `;
   currentGame.resetBoard();
 }
-
 
 
 function changeWinnerBanner(winner) {

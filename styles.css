@@ -3,7 +3,9 @@
   margin: 0;
 }
 
+
 /* Header */
+
 
 header {
   background-color: #1f2427;
@@ -44,7 +46,6 @@ img {
   width: 20%;
 }
 
-/* switched this from choose-your-game */
 .select-game {
   align-items: center;
   background-color: white;
@@ -63,9 +64,6 @@ img {
   justify-content: center;
   width: 60%;
 }
-
-/* Will need to change this to game-buttons??? if I change imgs to buttons and
-give them a background image in CSS */
 
 .game-images {
   display: flex;
@@ -106,13 +104,7 @@ give them a background image in CSS */
   margin: 5%;
   outline: none;
   padding: 5%;
-  /* text-align: center; */
 }
-
-/* .game-images > button {
-  width: 100%;
-  outline: none;
-} */
 
 .game-images > button {
   background-color: Transparent;
