@@ -9,12 +9,12 @@
   </head>
   <body>
     <header>
-        <h1>Rock, Paper, Scissors</h1>
+        <h1>Rock • Paper • Scissors</h1>
         <button class="change-game-btn hidden" id="changeGameBtn" type="button" name="button">CHANGE GAME</button>
     </header>
     <main>
-      <section class="human-score score-box">
-        <img src="assets/human.png" alt="Human outline image">
+      <section class="human-score-box">
+        <img class="score-box-img" src="assets/human.png" alt="Human outline image">
         <h3>Human</h3>
         <p id="humanScore">Wins: 0</p>
       </section>
@@ -22,7 +22,7 @@
         <h2>Choose Your Game!</h2>
         <div class="game-selection" id="gameSelection">
           <button class="rules" id="classic">
-            <h4>Classic</h4>
+            <h4 class="classic-header">Classic</h4>
             <p>Rock > Scissors</p>
             <p>Paper > Rock</p>
             <p>Scissors > Paper</p>
@@ -38,7 +38,7 @@
         </div>
       </section>
       <section class="middle-section hidden" id="classicFighters">
-        <h4>Choose Your Fighter!</h4>
+        <h2>Choose Your Fighter!</h2>
         <div class="game-images" id="classic">
           <button class="rock-img" id="rock" type="button" name="button"></button>
           <button class="paper-img" id="paper" type="button" name="button"></button>
@@ -47,7 +47,7 @@
       </section>
       <!-- Maybe remove this middle-section again...CSS sytles -->
       <section class="middle2-section middle-section hidden" id="difficultFighters">
-        <h4>Choose Your Fighter!</h4>
+        <h2>Choose Your Fighter!</h2>
         <div class="game-images" id="difficult">
           <button class="rock-img" id="rock" type="button" name="button"></button>
           <button class="paper-img" id="paper" type="button" name="button"></button>
@@ -60,12 +60,16 @@
         </div>
       </section>
       <section class="middle-section hidden" id="battleMode">
-        <h4 id="winnerBanner"></h4>
       </section>
-      <section class="computer-score score-box">
-        <img src="assets/computer.png" alt="Laptop image">
-        <h3>Computer</h3>
-        <p id="computerScore">Wins: 0</p>
+      <section class="computer-score-box">
+        <div class="computer-details">
+          <img class="score-box-img" src="assets/computer.png" alt="Laptop image">
+          <h3>Computer</h3>
+          <p id="computerScore">Wins: 0</p>
+        </div>
+        <div class="reset-score">
+          <button class="reset-score-btn hidden" id="resetScoreBtn" type="button" name="button">RESET SCORE</button>
+        </div>
       </section>
     </main>
     <footer></footer>

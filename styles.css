@@ -17,12 +17,21 @@ header {
   align-items: center;
 }
 
+
+/* Move all button similarities here and remove from classes */
+/* Your images are buttons...might not want to get too crazy with making all buttons have the same styling */
+button {
+  cursor: pointer;
+}
+
 .change-game-btn {
   align-items: center;
   background-color: #878787;
   border-radius: 5px;
   color: white;
+  cursor: pointer;
   display: flex;
+  font-size: 14px;
   height: 35px;
   justify-content: center;
   margin-left: 70px;
@@ -30,12 +39,21 @@ header {
   width: 150px;
 }
 
+.rules:hover, .reset-score-btn:hover, .change-game-btn:hover {
+  background-color: pink;
+  color: black;
+}
+
+.game-images > button:hover {
+  background-color: #D3D3D3 ;
+}
+
 
 /* Main */
 
 
 main {
-  background-color: #93c5d0;
+  background-color: #d9d9ea;;
   display: flex;
   justify-content: space-between;
   height: 600px;
@@ -46,9 +64,19 @@ img {
   width: 20%;
 }
 
+h2 {
+  font-size: 35px;
+}
+
+h4, h3 {
+  font-size: 20px;
+  margin-bottom: 2%;
+}
+
 .select-game {
   align-items: center;
   background-color: white;
+  box-shadow: 2px 2px 25px 2px #888888;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,6 +86,7 @@ img {
 .middle-section {
   align-items: center;
   background-color: white;
+  box-shadow: 2px 2px 25px 2px #888888;
   display: flex;
   flex-direction: column;
   font-size: 30px;
@@ -79,7 +108,7 @@ img {
   width: 100%;
 }
 
-.score-box {
+.human-score-box {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -89,8 +118,44 @@ img {
   width: 15%;
 }
 
-.score-box > img {
+.score-box-img {
   width: 30%;
+}
+
+.computer-score-box {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5%;
+  width: 15%;
+}
+
+.computer-details {
+  align-items: center;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.reset-score {
+  margin-bottom: 25%;
+}
+
+.reset-score-btn {
+  align-items: center;
+  background-color: #878787;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  height: 35px;
+  justify-content: center;
+  outline: none;
+  width: 125px;
 }
 
 .rules {
@@ -100,7 +165,6 @@ img {
   box-shadow: 5px 5px 8px 5px #888888;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin: 5%;
   outline: none;
   padding: 5%;
@@ -140,9 +204,19 @@ img {
   width: 115px;
 }
 
+.winner-banner {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.winner-banner > img {
+  width: 8%;
+}
+
 footer {
   background-color: #1f2427;
-  height: 70px;
+  height: 90px;
   margin-top: 0;
 }
 

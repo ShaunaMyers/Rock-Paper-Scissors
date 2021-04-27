@@ -22,6 +22,12 @@ class Player {
   }
 
 
+  resetWinsInLocalStorage() {
+    this.wins = 0;
+    this.saveWinsToStorage();
+  }
+
+
   changePlayer1Details(selectedFighter) {
     this.fighter = selectedFighter;
     currentGame.changePlayer2Details();
@@ -53,7 +59,7 @@ class Player {
 
 
   declareWinner(winner) {
-    displayfighterChoices(winner, currentGame.player1.fighter, this.fighter);
-}
+    displayfighterChoices(winner, currentGame.player1, this);
+  }
 
 };
