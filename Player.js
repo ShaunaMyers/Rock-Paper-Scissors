@@ -29,13 +29,12 @@ class Player {
 
 
   takeTurn() {
+    var fighters = ['rock', 'paper', 'scissors', 'plant', 'llama'];
     var selectedFighter2;
     if (currentGame.mode === 'difficult') {
-      var fighters = ['rock', 'paper', 'scissors', 'plant', 'llama'];
       selectedFighter2 = fighters[this.getRandomIndex(fighters)];
     } else {
-      var fighters = ['rock', 'paper', 'scissors']
-      selectedFighter2 = fighters[this.getRandomIndex(fighters)];
+      selectedFighter2 = fighters.slice(0, 3)[this.getRandomIndex(fighters.slice(0, 3))];
     }
     this.fighter = selectedFighter2;
     currentGame.evaluateWinner(currentGame.player1.fighter, this.fighter);
