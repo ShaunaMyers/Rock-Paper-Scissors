@@ -25,16 +25,19 @@ gameSelection.addEventListener('click', function(event){
   startNewGame(event);
 });
 
-// Refactor for only one event listener and event bubbling
+
 middleSection.addEventListener('click', function(event) {
   selectFighterView(event);
 });
+
 
 middleSection2.addEventListener('click', function(event) {
   selectFighterView(event);
 })
 
+
 changeGameBtn.addEventListener('click', displayGameSelectionView);
+
 
 resetScoreBtn.addEventListener('click', resetPlayersScore);
 
@@ -111,6 +114,7 @@ function changeWinnerBanner(winner, player1, player2) {
   }
 }
 
+
 function displayPlayerTokens(winner, player1, player2) {
   if (winner === 'Human') {
     battleMode.innerHTML = `
@@ -148,11 +152,13 @@ function displayGameSelectionView() {
   }
 }
 
+
 function displayResetScoreBtn() {
   if (currentGame.player1.wins || currentGame.player2.wins) {
     resetScoreBtn.classList.remove('hidden');
   }
 }
+
 
 function resetPlayersScore() {
   currentGame.resetGameScore();

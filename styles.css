@@ -3,10 +3,6 @@
   margin: 0;
 }
 
-
-/* Header */
-
-
 header {
   background-color: #1f2427;
   color: white;
@@ -17,9 +13,6 @@ header {
   align-items: center;
 }
 
-
-/* Move all button similarities here and remove from classes */
-/* Your images are buttons...might not want to get too crazy with making all buttons have the same styling */
 button {
   cursor: pointer;
 }
@@ -47,10 +40,6 @@ button {
 .game-images > button:hover {
   background-color: #D3D3D3 ;
 }
-
-
-/* Main */
-
 
 main {
   background-color: #d9d9ea;;
