@@ -16,7 +16,7 @@
 
 ## <a id="how-to-use-app">How to Use the App</a>
 ### View the App in your Browser
-[Play Rock, Paper, Scissors here on the live site! (link to be added when GH pages are deployed)](https://github.com/ShaunaMyers/Rock-Paper-Scissors/)
+[Play Rock, Paper, Scissors here on the live site!](https://shaunamyers.github.io/Rock-Paper-Scissors/)
 
 ### Main View
 ![image](https://user-images.githubusercontent.com/74690897/116312790-e97c0580-a77a-11eb-86da-f203be547179.png)  
