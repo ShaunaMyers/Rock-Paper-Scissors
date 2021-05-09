@@ -20,7 +20,7 @@ window.onload = function() {
 }
 
 
-gameSelection.addEventListener('click', function(event){
+gameSelection.addEventListener('click', function(event) {
   changeGameView(event);
   startNewGame(event);
 });
@@ -52,7 +52,9 @@ function changeGameView(event) {
 
 
 function startNewGame(event) {
-  currentGame.saveGameDetails(event);
+  var sectionName = event.target.closest('section').id;
+  var buttonName = event.target.closest('button').id;
+  currentGame.saveGameDetails(sectionName, buttonName);
   displayChangeGameBtn();
 }
 
@@ -63,8 +65,10 @@ function displayChangeGameBtn() {
 
 
 function selectFighterView(event) {
+  var sectionName = event.target.closest('section').id;
+  var buttonName = event.target.closest('button').id;
   changeHiddenViews(eval(`${event.target.closest('div').id}Fighters`), battleMode);
-  currentGame.saveGameDetails(event);
+  currentGame.saveGameDetails(sectionName, buttonName);
   displayResetScoreBtn();
 }
 
@@ -154,7 +158,8 @@ function displayGameSelectionView() {
 
 
 function displayResetScoreBtn() {
-  if (currentGame.player1.wins || currentGame.player2.wins) {
+  if (parseInt(currentGame.player1.wins) || parseInt(currentGame.player2.wins)) {
+    currentGame.player2.wins);
     resetScoreBtn.classList.remove('hidden');
   }
 }
@@ -168,6 +173,6 @@ function resetPlayersScore() {
 
 function changeHiddenViews() {
   for (var i = 0; i < arguments.length; i++) {
-      arguments[i].classList.toggle('hidden');
+    arguments[i].classList.toggle('hidden');
   }
 }

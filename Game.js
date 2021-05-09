@@ -6,12 +6,12 @@ class Game {
   }
 
 
-  saveGameDetails(event) {
-    if (event.target.closest('section').id === 'selectGame') {
-      this.mode = event.target.closest('button').id;
-    } else if (event.target.closest('section').id === 'classicFighters' ||
-      event.target.closest('section').id === 'difficultFighters') {
-      this.player1.changePlayer1Details(event.target.closest('button').id);
+  saveGameDetails(sectionName, buttonName) {
+    if (sectionName === 'selectGame') {
+      this.mode = buttonName;
+    } else if (sectionName === 'classicFighters' ||
+      sectionName === 'difficultFighters') {
+      this.player1.changePlayer1Details(buttonName);
     }
   }
 
