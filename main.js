@@ -158,7 +158,8 @@ function displayGameSelectionView() {
 
 
 function displayResetScoreBtn() {
-  if (currentGame.player1.wins || currentGame.player2.wins) {
+  if (parseInt(currentGame.player1.wins) || parseInt(currentGame.player2.wins)) {
+    currentGame.player2.wins);
     resetScoreBtn.classList.remove('hidden');
   }
 }
